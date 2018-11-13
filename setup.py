@@ -1,9 +1,9 @@
 from setuptools import setup
 
 setup(name='prayer_times_calculator',
-      version='0.0.1',
+      version='0.0.2',
       description='Prayer Times Calculator',
-      url='https://github.com/uchagani/prayer_times_calculator',
+      url='https://github.com/uchagani/prayer-times-calculator',
       author='Umair Chagani',
       author_email='umair.chagani@gmail.com',
       license='MIT',
