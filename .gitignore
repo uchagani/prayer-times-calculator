@@ -3,3 +3,7 @@ dist/
 __pycache__/
 test.py
 *.zip
+bin/
+lib/
+*.json
+*.cfg

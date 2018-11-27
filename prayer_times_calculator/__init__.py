@@ -1,1 +1,1 @@
-from .pray_times import PrayTimes
+from .pray_times_calculator import PrayerTimesCalculator
