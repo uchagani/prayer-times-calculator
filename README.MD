@@ -10,7 +10,7 @@ from prayer_times_calculator import PrayerTimesCalculator
 lat = 41.881832
 long = -87.623177
 calc_method = 'isna'
-date = 2018-11-27
+date = "2018-11-27"
 
 calc = PrayerTimesCalculator(latitude=lat, longitude=long,
 calculation_method=calc_method, date=date)
