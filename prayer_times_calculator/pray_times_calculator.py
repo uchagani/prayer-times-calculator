@@ -5,10 +5,19 @@ from datetime import datetime
 
 class PrayerTimesCalculator:
     CALCULATION_METHODS = {
+        'shia': 0, 
         'karachi': 1,
         'isna': 2,
         'mwl': 3,
-        'makkah': 4
+        'makkah': 4,
+        'egas': 5,
+        'igut': 6,
+        'gulf': 7,
+        'kuwait': 8,
+        'qatar': 9,
+        'muss': 10,
+        'uoisdf': 11,
+        'dibt': 12
     }
 
     API_URL = "http://api.aladhan.com/timings"
