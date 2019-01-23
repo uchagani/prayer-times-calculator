@@ -10,7 +10,7 @@ class PrayerTimesCalculator:
         'isna': 2,
         'mwl': 3,
         'makkah': 4,
-        'egas': 5,
+        'egypt': 5,
         'igut': 6,
         'gulf': 7,
         'kuwait': 8,
