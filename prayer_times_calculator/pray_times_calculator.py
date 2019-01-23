@@ -15,9 +15,9 @@ class PrayerTimesCalculator:
         'gulf': 7,
         'kuwait': 8,
         'qatar': 9,
-        'muss': 10,
-        'uoisdf': 11,
-        'dibt': 12
+        'singapore': 10,
+        'france': 11,
+        'turkey': 12
     }
 
     API_URL = "http://api.aladhan.com/timings"
