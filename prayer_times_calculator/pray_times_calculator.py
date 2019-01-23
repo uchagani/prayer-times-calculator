@@ -10,14 +10,15 @@ class PrayerTimesCalculator:
         'mwl': 3,
         'makkah': 4
     }
-
+    PRAYERTIMESTUNING = [0,0,0,0,0,0,0,0,0]
     API_URL = "http://api.aladhan.com/timings"
 
     def __init__(self, latitude: float, longitude: float,
-                 calculation_method: str, date: str):
+                 calculation_method: str, date: str, tune: str):
         self._latitude = latitude
         self._longitude = longitude
-
+        self._tune = ','.join(str(e) for e in PRAYERTIMESTUNING)
+        
         calculation_method = calculation_method.lower()
         if calculation_method in self.CALCULATION_METHODS:
             self._calculation_method = self.CALCULATION_METHODS[
@@ -33,7 +34,7 @@ class PrayerTimesCalculator:
     def fetch_prayer_times(self):
         url = "{}/{}?latitude={}&longitude={}&method={}".format(
             self.API_URL, self._timestamp, self._latitude, self._longitude,
-            self._calculation_method)
+            self._calculation_method, self._tune)
 
         response = requests.get(url)
 
