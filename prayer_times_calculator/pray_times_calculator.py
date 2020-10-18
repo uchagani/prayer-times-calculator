@@ -49,9 +49,9 @@ class PrayerTimesCalculator:
         sunset_tune = 0,
         isha_tune = 0,
         midnight_tune = 0,
-        fajr_angle = "15",
+        fajr_angle = "",
         maghrib_angle = "",
-        isha_angle = "15",
+        isha_angle = "",
     ):
 
         if calculation_method.lower() not in self.CALCULATION_METHODS:
