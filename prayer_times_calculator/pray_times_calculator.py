@@ -23,6 +23,7 @@ class PrayerTimesCalculator:
         "france": 12,
         "turkey": 13,
         "russia": 14,
+        "custom": 99,
     }
 
     SCHOOLS = {"shafi": 0, "hanafi": 1}
@@ -38,6 +39,19 @@ class PrayerTimesCalculator:
         school="",
         midnightMode="",
         latitudeAdjustmentMethod="",
+        tune = bool,
+        imsak_tune = 0,
+        fajr_tune = 0,
+        sunrise_tune = 0,
+        dhuhr_tune = 0,
+        asr_tune = 0,
+        maghrib_tune = 0,
+        sunset_tune = 0,
+        isha_tune = 0,
+        midnight_tune = 0,
+        fajr_angle = "15",
+        maghrib_angle = "",
+        isha_angle = "15",
     ):
 
         if calculation_method.lower() not in self.CALCULATION_METHODS:
@@ -72,9 +86,28 @@ class PrayerTimesCalculator:
         self._lat_adj_method = self.LAT_ADJ_METHODS.get(
             latitudeAdjustmentMethod.lower()
         )
+        if tune is True:
+            self._tune = str(imsak_tune) + ',' + str(fajr_tune) + ',' \
+                + str(sunrise_tune) + ',' + str(dhuhr_tune) + ',' \
+                + str(asr_tune) + ',' + str(maghrib_tune) + ',' \
+                + str(sunset_tune) + ',' + str(isha_tune) + ',' \
+                + str(midnight_tune)
+        else:
+            self._tune = False
+
+        if self._calculation_method == 99: 
+            self.custom_method(fajr_angle, maghrib_angle, isha_angle)
+        else: self._method_settings = False
 
         date_parsed = datetime.strptime(date, "%Y-%m-%d")
         self._timestamp = int(date_parsed.timestamp())
+
+    def custom_method(self, fajr_angle, maghrib_angle, isha_angle):
+            if fajr_angle is None: fajr_angle = "null"
+            if maghrib_angle is None: maghrib_angle = "null"
+            if isha_angle is None: isha_angle = "null"
+            self._method_settings = str(fajr_angle) + ',' + str(maghrib_angle) \
+                + ',' +str(isha_angle)
 
     def fetch_prayer_times(self):
         """Return prayer times for defined parameters."""
@@ -90,6 +123,10 @@ class PrayerTimesCalculator:
             params.update({"midnightMode": self._midnight_mode})
         if self._lat_adj_method:
             params.update({"latitudeAdjustmentMethod": self._lat_adj_method})
+        if self._tune:
+            params.update({"tune": self._tune})
+        if self._method_settings:
+            params.update({"methodSettings": self._method_settings})
 
         response = requests.get(url, params=params)
 

@@ -16,6 +16,24 @@ date = "2018-11-27"
 school = "shafi"
 midnightMode = "jafari"
 latitudeAdjustmentMethod = "one seventh"
+# If tune = True, then you can tune the timings by adding the tune parameter
+# (denoting addition / substraction in minutes)
+# Please NOTE that tuning one prayer will not change another. 
+# So adding 3 mins to Maghrib will NOT automatically add 3 mins to Isha
+tune = False
+imsak_tune = 0
+fajr_tune = 0
+sunrise_tune = 0
+dhuhr_tune = 0
+asr_tune = 0
+maghrib_tune = 0
+sunset_tune = 0
+isha_tune = 0
+midnight_tune = 0
+# If calc_method="custom", then you can override some of these variables
+fajr_angle = 15
+maghrib_angle = None
+isha_angle = 15
 
 calc = PrayerTimesCalculator(
     latitude=lat,
@@ -24,7 +42,19 @@ calc = PrayerTimesCalculator(
     date=date,
     school=school,
     midnightMode=midnightMode,
-    latitudeAdjustmentMethod=latitudeAdjustmentMethod
+    latitudeAdjustmentMethod=latitudeAdjustmentMethod,
+    tune=tune,
+    imsak_tune=imsak_tune,
+    fajr_tune=fajr_tune,
+    sunrise_tune=sunrise_tune,
+    dhuhr_tune=dhuhr_tune,
+    asr_tune=asr_tune,
+    maghrib_tune=maghrib_tune,
+    sunset_tune=sunset_tune,
+    isha_tune=isha_tune,
+    fajr_angle=fajr_angle,
+    maghrib_angle=maghrib_angle,
+    isha_angle=isha_angle,
 )
 
 times = calc.fetch_prayer_times()
