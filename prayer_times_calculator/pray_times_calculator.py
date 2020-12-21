@@ -10,6 +10,7 @@ class PrayerTimesCalculator:
     API_URL = "http://api.aladhan.com/timings"
 
     CALCULATION_METHODS = {
+        "jafari": 0,
         "karachi": 1,
         "isna": 2,
         "mwl": 3,
