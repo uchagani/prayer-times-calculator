@@ -129,7 +129,7 @@ class PrayerTimesCalculator:
         if self._method_settings:
             params.update({"methodSettings": self._method_settings})
 
-        response = requests.get(url, params=params)
+        response = requests.get(url, params=params, timeout=10)
 
         if not response.status_code == 200:
             raise InvalidResponseError(f"\nUnable to retrive prayer times. Url: {url}")
