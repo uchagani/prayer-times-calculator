@@ -24,6 +24,7 @@ class PrayerTimesCalculator:
         "france": 12,
         "turkey": 13,
         "russia": 14,
+        "moonsighting": 15,
         "custom": 99,
     }
 
@@ -53,6 +54,7 @@ class PrayerTimesCalculator:
         fajr_angle = "",
         maghrib_angle = "",
         isha_angle = "",
+        shafaq = "general",
     ):
 
         if calculation_method.lower() not in self.CALCULATION_METHODS:
