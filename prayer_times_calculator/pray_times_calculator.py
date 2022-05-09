@@ -7,7 +7,7 @@ from .exceptions import CalculationMethodError, InvalidResponseError
 
 class PrayerTimesCalculator:
 
-    API_URL = "http://api.aladhan.com/timings"
+    API_URL = "http://api.aladhan.com/v1/timings"
 
     CALCULATION_METHODS = {
         "jafari": 0,
@@ -98,7 +98,7 @@ class PrayerTimesCalculator:
         else:
             self._tune = False
 
-        if self._calculation_method == 99: 
+        if self._calculation_method == 99:
             self.custom_method(fajr_angle, maghrib_angle, isha_angle)
         else: self._method_settings = False
 
@@ -136,4 +136,7 @@ class PrayerTimesCalculator:
         if not response.status_code == 200:
             raise InvalidResponseError(f"\nUnable to retrive prayer times. Url: {url}")
 
-        return response.json()["data"]["timings"]
+        resp = response.json()["data"]["timings"]
+        resp["date"] = response.json()["data"]["date"]
+
+        return resp
