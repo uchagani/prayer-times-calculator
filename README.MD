@@ -18,7 +18,7 @@ midnightMode = "jafari"
 latitudeAdjustmentMethod = "one seventh"
 # If tune = True, then you can tune the timings by adding the tune parameter
 # (denoting addition / substraction in minutes)
-# Please NOTE that tuning one prayer will not change another. 
+# Please NOTE that tuning one prayer will not change another.
 # So adding 3 mins to Maghrib will NOT automatically add 3 mins to Isha
 tune = False
 imsak_tune = 0
@@ -63,5 +63,30 @@ times = calc.fetch_prayer_times()
 the `fetch_prayer_times` method will return a dict similar to:
 
 ```python
-{'Fajr': '05:31', 'Sunrise': '06:53', 'Dhuhr': '11:38', 'Asr': '14:03', 'Sunset': '16:22', 'Maghrib': '16:22', 'Isha': '17:44', 'Imsak': '05:21', 'Midnight': '23:38'}
+{'Fajr': '05:31',
+ 'Sunrise': '06:53',
+ 'Dhuhr': '11:38',
+ 'Asr': '14:03',
+ 'Sunset': '16:22',
+ 'Maghrib': '16:22',
+ 'Isha': '17:44',
+ 'Imsak': '05:21',
+ 'Midnight': '22:57',
+ 'date': {'readable': '26 Nov 2018',
+  'timestamp': '1543276800',
+  'hijri': {'date': '17-03-1440',
+   'format': 'DD-MM-YYYY',
+   'day': '17',
+   'weekday': {'en': 'Al Athnayn', 'ar': 'الاثنين'},
+   'month': {'number': 3, 'en': 'Rabīʿ al-awwal', 'ar': 'رَبيع الأوّل'},
+   'year': '1440',
+   'designation': {'abbreviated': 'AH', 'expanded': 'Anno Hegirae'},
+   'holidays': []},
+  'gregorian': {'date': '26-11-2018',
+   'format': 'DD-MM-YYYY',
+   'day': '26',
+   'weekday': {'en': 'Monday'},
+   'month': {'number': 11, 'en': 'November'},
+   'year': '2018',
+   'designation': {'abbreviated': 'AD', 'expanded': 'Anno Domini'}}}}
 ```
