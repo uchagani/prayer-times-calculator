@@ -119,6 +119,7 @@ class PrayerTimesCalculator:
             "latitude": self._latitude,
             "longitude": self._longitude,
             "method": self._calculation_method,
+            "iso8601": "true",
         }
         if self._school:
             params.update({"school": self._school})
