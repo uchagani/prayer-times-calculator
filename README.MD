@@ -55,6 +55,7 @@ calc = PrayerTimesCalculator(
     fajr_angle=fajr_angle,
     maghrib_angle=maghrib_angle,
     isha_angle=isha_angle,
+    iso8601=False
 )
 
 times = calc.fetch_prayer_times()
@@ -90,3 +91,32 @@ the `fetch_prayer_times` method will return a dict similar to:
    'year': '2018',
    'designation': {'abbreviated': 'AD', 'expanded': 'Anno Domini'}}}}
 ```
+In case `iso8601` is set to True the returned dict will be similar to:
+
+```python
+{'Fajr': '2018-11-26T05:31:00+03:00',
+ 'Sunrise': '2018-11-26T06:53:00+03:00',
+ 'Dhuhr': '2018-11-26T11:38:00+03:00',
+ 'Asr': '2018-11-26T14:03:00+03:00',
+ 'Sunset': '2018-11-26T16:22:00+03:00',
+ 'Maghrib': '2018-11-26T16:22:00+03:00',
+ 'Isha': '2018-11-26T17:44:00+03:00',
+ 'Imsak': '2018-11-26T05:21:00+03:00',
+ 'Midnight': '2018-11-26T22:57:00+03:00',
+ 'date': {'readable': '26 Nov 2018',
+  'timestamp': '1543276800',
+  'hijri': {'date': '17-03-1440',
+   'format': 'DD-MM-YYYY',
+   'day': '17',
+   'weekday': {'en': 'Al Athnayn', 'ar': 'الاثنين'},
+   'month': {'number': 3, 'en': 'Rabīʿ al-awwal', 'ar': 'رَبيع الأوّل'},
+   'year': '1440',
+   'designation': {'abbreviated': 'AH', 'expanded': 'Anno Hegirae'},
+   'holidays': []},
+  'gregorian': {'date': '26-11-2018',
+   'format': 'DD-MM-YYYY',
+   'day': '26',
+   'weekday': {'en': 'Monday'},
+   'month': {'number': 11, 'en': 'November'},
+   'year': '2018',
+   'designation': {'abbreviated': 'AD', 'expanded': 'Anno Domini'}}}}

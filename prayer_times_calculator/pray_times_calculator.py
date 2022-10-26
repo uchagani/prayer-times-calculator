@@ -105,6 +105,7 @@ class PrayerTimesCalculator:
 
         date_parsed = datetime.strptime(date, "%Y-%m-%d")
         self._timestamp = int(date_parsed.timestamp())
+        self.iso8601 = 'true' if iso8601 else 'false'
 
     def custom_method(self, fajr_angle, maghrib_angle, isha_angle):
             if fajr_angle is None: fajr_angle = "null"
@@ -120,7 +121,7 @@ class PrayerTimesCalculator:
             "latitude": self._latitude,
             "longitude": self._longitude,
             "method": self._calculation_method,
-            "iso8601": iso8601,
+            "iso8601": self.iso8601,
         }
         if self._school:
             params.update({"school": self._school})
