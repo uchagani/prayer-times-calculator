@@ -55,6 +55,7 @@ class PrayerTimesCalculator:
         maghrib_angle = "",
         isha_angle = "",
         shafaq = "general",
+        iso8601 = False,
     ):
 
         if calculation_method.lower() not in self.CALCULATION_METHODS:
@@ -119,7 +120,7 @@ class PrayerTimesCalculator:
             "latitude": self._latitude,
             "longitude": self._longitude,
             "method": self._calculation_method,
-            "iso8601": "true",
+            "iso8601": iso8601,
         }
         if self._school:
             params.update({"school": self._school})
