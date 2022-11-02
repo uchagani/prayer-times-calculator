@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='prayer_times_calculator',
-      version='0.0.6',
+      version='0.0.7',
       description='Prayer Times Calculator',
       url='https://github.com/uchagani/prayer-times-calculator',
       author='Umair Chagani',
