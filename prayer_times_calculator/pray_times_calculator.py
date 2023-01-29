@@ -104,7 +104,7 @@ class PrayerTimesCalculator:
         else: self._method_settings = False
 
         date_parsed = datetime.strptime(date, "%Y-%m-%d")
-        self._timestamp = int(date_parsed.timestamp())
+        self._date = date_parsed.strftime("%d-%m-%Y")
         self.iso8601 = 'true' if iso8601 else 'false'
 
     def custom_method(self, fajr_angle, maghrib_angle, isha_angle):
@@ -116,7 +116,7 @@ class PrayerTimesCalculator:
 
     def fetch_prayer_times(self):
         """Return prayer times for defined parameters."""
-        url = f"{self.API_URL}/{self._timestamp}"
+        url = f"{self.API_URL}/{self._date}"
         params = {
             "latitude": self._latitude,
             "longitude": self._longitude,
