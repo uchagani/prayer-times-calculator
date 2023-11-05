@@ -68,11 +68,11 @@ class PrayerTimesCalculator:
         if school and school.lower() not in SCHOOLS:
             raise CalculationMethodError(school, list(SCHOOLS))
 
-        if midnightMode is not None and midnightMode.lower() not in MIDNIGHT_MODES:
+        if midnightMode and midnightMode.lower() not in MIDNIGHT_MODES:
             raise CalculationMethodError(midnightMode, list(MIDNIGHT_MODES))
 
         if (
-            latitudeAdjustmentMethod is not None
+            latitudeAdjustmentMethod
             and latitudeAdjustmentMethod.lower() not in LAT_ADJ_METHODS
         ):
             raise CalculationMethodError(
