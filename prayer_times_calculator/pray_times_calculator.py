@@ -27,6 +27,13 @@ CALCULATION_METHODS: Final = {
     "russia": 14,
     "moonsighting": 15,
     "dubai": 16,
+    "jakim": 17,
+    "tunisia": 18,
+    "algeria": 19,
+    "kemenag": 20,
+    "morocco": 21,
+    "portugal": 22,
+    "jordan": 23,
     "custom": 99,
 }
 
