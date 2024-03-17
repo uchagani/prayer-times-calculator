@@ -26,6 +26,7 @@ CALCULATION_METHODS: Final = {
     "turkey": 13,
     "russia": 14,
     "moonsighting": 15,
+    "dubai": 16,
     "custom": 99,
 }
 
